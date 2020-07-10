@@ -2,6 +2,6 @@
 
 echo "------ HOOK START - BUILD -------"
 
-docker build --build-arg nodetag=${nodetag} -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
+docker build --build-arg nodetag=${nodetag} --build-arg osver=${osver} -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
 
 echo "------ HOOK END - BUILD -------"
