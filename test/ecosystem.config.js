@@ -1,5 +1,8 @@
 module.exports = {
     apps : [{
+      name:'pm2-web',
+      script:'pm2-web'
+    },{
       name: "app",
       script: "./index.js",
       env: {
