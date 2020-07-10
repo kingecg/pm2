@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+echo "------ HOOK START - BUILD -------"
+
+docker build --build-arg nodetag=${nodetag} -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
+
+echo "------ HOOK END - BUILD -------"
