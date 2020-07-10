@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 
 echo "------ HOOK START - BUILD -------"
-
-docker build --build-arg nodetag=${nodetag} --build-arg osver=${osver} -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
+osver=${IMAGE_NAME##*-}
+basetag=${IMAGE_NAME##*:}
+echo "Build in ${osver} with ${basetag}"
+docker build --build-arg nodetag=${basetag} --build-arg osver=${osver} -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
 
 echo "------ HOOK END - BUILD -------"
