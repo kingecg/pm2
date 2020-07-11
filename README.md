@@ -11,7 +11,7 @@ Usage:
 module.exports = {
     apps : [{
       name:'pm2-web',
-      script:'pm2-web'
+      script:'../pm2-web/pm2-web.js'
     },{
       name: "app",
       script: "./index.js",
