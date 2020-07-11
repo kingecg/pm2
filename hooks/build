@@ -4,6 +4,7 @@ echo "------ HOOK START - BUILD -------"
 osver=${IMAGE_NAME##*-}
 basetag=${IMAGE_NAME##*:}
 echo "Build in ${osver} with ${basetag}"
+git clone --depth=1 https://github.com/kingecg/pm2-web.git
 docker build --build-arg nodetag=${basetag} --build-arg osver=${osver} -t ${IMAGE_NAME} -f ${DOCKERFILE_PATH} .
 
 echo "------ HOOK END - BUILD -------"

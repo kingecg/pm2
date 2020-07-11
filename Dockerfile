@@ -9,7 +9,10 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak \
 # RUN useradd --create-home --no-log-init --shell /bin/bash pm2 && adduser pm2 sudo
 # USER pm2
 RUN npm config set registry https://registry.npm.taobao.org 
-RUN npm install node-gyp -g && npm install pm2@3.5.1 -g && export USER=root &&  export npm_config_loglevel=http; export npm_config_spin=false && npm install pm2-web -g  --unsafe
+RUN npm install node-gyp -g && npm install pm2@3.5.1 -g && export USER=root
+ADD pm2-web
+WORKDIR pm2-web
+RUN npm i
 # RUN pm2 conf pm2-webshell:username waterchestnut
 # RUN pm2 conf pm2-webshell:password waterchestnut
 VOLUME ["/apps"]
