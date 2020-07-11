@@ -10,7 +10,7 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak \
 # USER pm2
 RUN npm config set registry https://registry.npm.taobao.org 
 RUN npm install node-gyp -g && npm install pm2@3.5.1 -g && export USER=root
-ADD pm2-web
+ADD pm2-web /pm2-web
 WORKDIR pm2-web
 RUN npm i
 # RUN pm2 conf pm2-webshell:username waterchestnut
